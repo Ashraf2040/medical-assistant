@@ -71,12 +71,13 @@ export default function HomePage() {
           Ask Ai
         </button> */}
         <Link href="/medical" className="">
-          <button className=" bg-[#dbeefd] px-2 rounded-lg border-2 border-[#00afbf]  text-[16px] text-[#00afbf] py-2">
+          <button className=" bg-[#085f63]  px-2 rounded-lg    text-white font-semibold py-2">
           Nearby Medicals 
           </button>
         </Link>
         <Link href="/healthcare">
-          <button className="bg-[#dbeefd] px-2 rounded-lg border-2 border-[#00afbf]  text-[16px] text-[#00afbf] py-2 ">
+          <button className="bg-[#085f63] px-2 rounded-lg border-[  text-[16px] text-white
+           py-2 font-semibold ">
           Healthcare Education
           </button>
         </Link>

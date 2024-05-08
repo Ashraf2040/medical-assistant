@@ -1,8 +1,24 @@
+"use client"
+
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect } from 'react'
+
 import Map from '../components/Map'
+import GlobalApies from '../services/GlobalApies'
 export default function MedicalLocation() {
+
+
+ const getNearByPlace =  ()=>{
+  GlobalApies.getNearByPlace("gas_station", "35.5827712", "-80.8484864").then((res)=>{
+    console.log(res)
+    console.log("your code here")
+  })
+ }
+
+ useEffect(()=>{
+  getNearByPlace()
+ },[])
   return (
     <div className=' my-4 h-screen  px-3 flex  flex-col justify-center items-center'>
   
