@@ -25,6 +25,11 @@ const LocationMap = () => {
       center: { lat: position.coords.latitude, lng: position.coords.longitude }, // Default to San Francisco
       zoom: 12,
     });
+
+    const marker = new window.google.maps.Marker({
+      position: { lat: position.coords.latitude, lng: position.coords.longitude },
+      map: map,
+    })
     
     // Add your location-based features here
   };
