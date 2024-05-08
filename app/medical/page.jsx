@@ -1,12 +1,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-
+import Map from '../components/Map'
 export default function MedicalLocation() {
   return (
-    <div className=' my-4  px-6 flex justify-center flex-col  items-center'>
+    <div className=' my-4 h-screen  px-3 flex  flex-col justify-center items-center'>
   
-      <h1>Nearby Medicals</h1>
+  <Map />
   
     </div>
   )
