@@ -164,7 +164,7 @@ export default function HomePage() {
       <div className="FAQ w-[90%]   grid md:grid-cols-2 lg:grid-cols-3 gap-5">
         <div className="grid grid-cols-1 gap-2 w-full"> 
           {questionArray.map((question) => (
-          <button key={question}   className="bg-white cursor-pointer border-2 shadow-sm rounded-lg text-[#00afbf] py-2 my-2"  >{question}</button>
+          <button key={question}   className="bg-white cursor-pointer border-2 shadow-sm rounded-lg text-[#00afbf] py-2 "  >{question}</button>
         ))}</div>
        
       </div>
