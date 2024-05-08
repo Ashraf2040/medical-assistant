@@ -7,7 +7,7 @@ export default function MedicalLocation() {
     <div className=' my-4 h-screen  px-3 flex  flex-col justify-center items-center'>
   
   <Map />
-  
+  {/* asdsad */}
     </div>
   )
 }
