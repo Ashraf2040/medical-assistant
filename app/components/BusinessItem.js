@@ -1,5 +1,6 @@
 import { UserLocationContext } from '../context/UserLocationContext';
 import Image from 'next/image'
+import Link from 'next/link';
 import React, { useContext, useEffect, useState } from 'react'
 
 function BusinessItem({business,showDir=false}) {
@@ -48,16 +49,16 @@ function BusinessItem({business,showDir=false}) {
   }
 
     return (
-    <div className='w-[195px] flex-shrink-0 p-2
+    <div className='min-w-[195px] flex flex-col justify-between min-h-[110px]   flex-shrink-0 p-2  
      rounded-lg shadow-md mb-1
-     bg-white hover:scale-110 transition-all mt-[20px] cursor-pointer'>
-        <Image src={`https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${photo_ref}&key=${GOOGLE_API_KEY}`}
+     hover:scale-110 transition-all mt-[20px] cursor-pointer' onClick={onDirectionClick}>
+        {/* <Image src={`https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${photo_ref}&key=${GOOGLE_API_KEY}`}
             alt={business.name}
             width={180}
             height={80}
             className='rounded-lg object-cover h-[90px] '
-        />
-         <h2 className='text-[13px] font-bold mt-1 line-clamp-1'>{business.name}</h2>
+        /> */}
+         <Link href="" onClick={onDirectionClick} className='text-[14px] font-bold   '>{business.name}</Link>
                 <h2 className='text-[10px] text-gray-400 
                 line-clamp-2'>{business.formatted_address}</h2>
                 <div className='flex gap-1 items-center'>

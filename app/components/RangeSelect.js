@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 function RangeSelect({onRadiusChange}) {
-    const [radius,setRadius]=useState(2500);
+    const [radius,setRadius]=useState(1000);
   return (
     <div className='mt-5 px-2'>
         <h2
