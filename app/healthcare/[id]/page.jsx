@@ -36,7 +36,7 @@ export default function TopicInfo({params}) {
   ]
   
   return (
-    <div className='flex flex-col bg-gray-100 h-screen      items-center w-full  border-b-2 border-white  pt-8'> 
+    <div className='flex flex-col bg-gray-100 h-screen      items-center w-full  border-b-2 border-white  pt-3'> 
     <div className='flex  items-center gap-4  justify-center  '>
     <Link href="/healthcare" className='text-[#02B1BF]'>
      
@@ -87,7 +87,7 @@ export default function TopicInfo({params}) {
         
       </Swiper>
 
-      <p className='font-semibold   border-gray-400  rounded-[15px] text-[#02B1BF] p-4 py-2 mt-6'> {`${currentIndex+1} of ${images.length} `}</p>
+      <p className='font-semibold   border-gray-400  rounded-[15px] text-[#02B1BF] p-4 py-2 mt-2'> {`${currentIndex+1} of ${images.length} `}</p>
       
      
     </div>

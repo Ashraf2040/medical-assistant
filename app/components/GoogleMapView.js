@@ -27,7 +27,7 @@ function GoogleMapView({businessList}) {
     <div>
         <LoadScript
             googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_API_KEY}
-            mapIds={['327f00d9bd231a33']}
+            mapIds={['my-map-id']}
        >
             <GoogleMap
             mapContainerStyle={containerStyle}
@@ -36,19 +36,19 @@ function GoogleMapView({businessList}) {
              center={
             !selectedBusiness.name?userLocation:selectedBusiness.geometry.location
           }
-            options={{mapId:'327f00d9bd231a33'}}
-            zoom={13}
+            options={{mapId:'my-map-id'}}
+            zoom={14}
             onLoad={map=>setMap(map)}
             >
               <MarkerF
-                // position={userLocation}
-                // icon={{
-                //   url:'/user-location.png',
-                //   scaledSize:{
-                //     width:50,
-                //     height:50
-                //   }
-                // }}
+                position={userLocation}
+                icon={{
+                  url:'/user-location.png',
+                  scaledSize:{
+                    width:50,
+                    height:50
+                  }
+                }}
               />
               {businessList.map((item,index)=>index<=7&&(
                 <Markers business={item} key={index}/>
