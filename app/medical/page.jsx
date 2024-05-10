@@ -2,28 +2,49 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import Map3 from '../components/Map3'
+import Maps2 from '../components/Maps2'
+import Map4 from '../components/Map4'
+import Map5 from '../components/Map5'
+import Map6 from '../components/Map6'
 
-import Map from '../components/Map'
 import GlobalApies from '../services/GlobalApies'
+import axios from 'axios'
 export default function MedicalLocation() {
 
-
- const getNearByPlace =  ()=>{
-  GlobalApies.getNearByPlace("gas_station", "35.5827712", "-80.8484864").then((res)=>{
-    console.log(res)
-    console.log("your code here")
-  })
- }
+  const [lat, setLat] = useState(0)
+  const [lng, setLng] = useState(0)
 
  useEffect(()=>{
-  getNearByPlace()
+
+  axios.get("/api/nearby").then((response)=>{
+
+    console.log(response.data)
+  })
  },[])
+
+//  useEffect(()=>{
+
+//     navigator.geolocation.getCurrentPosition(function(position) {
+//       console.log("Latitude is :", position.coords.latitude);
+//       console.log("Longitude is :", position.coords.longitude);
+//       setLat(position.coords.latitude)
+//       setLng(position.coords.longitude)
+//       })
+    
+//   getNearByPlace()
+//  },[])
   return (
-    <div className=' my-4 h-screen  px-3 flex  flex-col justify-center items-center'>
+    <div className=' py-2 w-full h-screen   '>
   
-  <Map />
+  {/* <Map currentLat={lat} currentLng={lng}/> */}
   {/* asdsad */}
+  {/* <Maps2 /> */}
+  {/* <Map4 /> */}
+  <Map3 />
+  {/* <Map6 /> */}
+  {/* <Map5/> */}
     </div>
   )
 }

@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from 'react';
-const LocationMap = () => {
+
+const LocationMap = ({currentLat, currentLng}) => {
 
     const [position, setPosition] = useState({ coords: { latitude: 21.4241, longitude: 39.8173 } });
   const mapRef = useRef(null);
@@ -23,13 +24,13 @@ const LocationMap = () => {
   },[])
   const initializeMap = () => {
     const map = new window.google.maps.Map(mapRef.current, {
-      center: { lat: position.coords.latitude, lng: position.coords.longitude }, // Default to San Francisco
+      center: { lat: currentLat, lng: currentLng }, // Default to San Francisco
       zoom: 12,
     });
      const gAutocomplete = new window.google.maps.places.Autocomplete(placeAutoCompleteRef)
 
     const marker = new window.google.maps.Marker({
-      position: { lat: position.coords.latitude, lng: position.coords.longitude },
+      position: { lat: currentLat, lng: currentLng },
       map: map,
     })
     
