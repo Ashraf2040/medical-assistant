@@ -71,7 +71,7 @@ export default function HealthCare() {
         <SwiperSlide>Slide 9</SwiperSlide> */}
       </Swiper>
     </div>
-    <div className=' flex flex-col w-full  '>
+    <div className=' flex flex-col w-full items-center justify-center  '>
       <h1 className='text-lg my-6 text-[#02B1BF] text-center font-semibold'>Category 2</h1>
       <Swiper
         effect={'cards'}
@@ -110,7 +110,7 @@ export default function HealthCare() {
         <SwiperSlide>Slide 9</SwiperSlide> */}
       </Swiper>
     </div>
-    <div className=' flex flex-col w-full  '>
+    <div className=' flex flex-col w-full items-center justify-center '>
       <h1 className='text-lg my-6 text-[#02B1BF] text-center font-semibold'>Category 3</h1>
       <Swiper
         effect={'cards'}
@@ -149,7 +149,7 @@ export default function HealthCare() {
         <SwiperSlide>Slide 9</SwiperSlide> */}
       </Swiper>
     </div>
-    <div className=' flex flex-col w-full  '>
+    <div className=' flex flex-col w-full items-center justify-center '>
       <h1 className='text-lg my-6 text-[#02B1BF] text-center font-semibold'>Category 4</h1>
       <Swiper
         effect={'cards'}
