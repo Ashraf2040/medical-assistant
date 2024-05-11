@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaStar } from "react-icons/fa";
 
 
@@ -21,10 +21,17 @@ const customStyles = {
   },
 
 };
-
+const colors = {
+    orange: "#FFBA5A",
+    grey: "#a9a9a9"
+    
+};
 
  
 export default function Modal2({setLang}) {
+    const [currentValue, setCurrentValue] = useState(0);
+    const [hoverValue, setHoverValue] = useState(undefined);
+    const stars = Array(5).fill(0)
     useEffect(() => {
         setTimeout(() => {
          openModal()
@@ -49,6 +56,19 @@ export default function Modal2({setLang}) {
 
   function closeModal() {
     setIsOpen(false);
+  }
+  
+  const handleClick = value => {
+    setCurrentValue(value)
+    console.log(currentValue)
+  }
+
+  const handleMouseOver = newHoverValue => {
+    setHoverValue(newHoverValue)
+  };
+
+  const handleMouseLeave = () => {
+    setHoverValue(undefined)
   }
 
   const languges =[
@@ -92,3 +112,38 @@ export default function Modal2({setLang}) {
   
   )
 }
+
+
+
+
+
+
+
+const styles = {
+    container: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center"
+    },
+    stars: {
+      display: "flex",
+      flexDirection: "row",
+    },
+    textarea: {
+      border: "1px solid #a9a9a9",
+      borderRadius: 5,
+      padding: 10,
+      margin: "40px 0",
+      minHeight: 100,
+      width: 330
+      
+    },
+    button: {
+      border: "1px solid #a9a9a9",
+      borderRadius: 5,
+      width: 300,
+      padding: 10,
+    }
+  
+  };
+  

@@ -43,7 +43,7 @@ export default function MedicalLocation() {
   {/* <Maps2 /> */}
   {/* <Map4 /> */}
 
-  <div><Modal2/></div>
+  {/* <div><Modal2/></div> */}
   <Map3 />
   {/* <Map6 /> */}
   {/* <Map5/> */}
