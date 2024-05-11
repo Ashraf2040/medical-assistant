@@ -55,8 +55,8 @@ const titlecard = currentCards[currentIndex].title
   
   return (
     <div className='flex flex-col bg-gray-100 h-screen items-center w-full  border-b-2 border-white  pt-2'> 
-    <div className='flex  items-center gap-4  justify-center  '>
-    <Link href="/healthcare" className='text-[#02B1BF]'>
+    <div className='flex px-3 items-center gap-4  justify-center relative w-full '>
+    <Link href="/healthcare" className='text-[#02B1BF] absolute left-3'>
      
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="w-6 h-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
@@ -64,7 +64,7 @@ const titlecard = currentCards[currentIndex].title
 
 
       </Link>
-    <h1 className='text-xl   text-[#02B1BF]  w-fit  font-bold   rounded-lg '>{currentTitleTrimed}</h1>
+    <h1 className='text-xl    text-[#02B1BF]  w-fit  font-bold   rounded-lg '>{currentTitleTrimed}</h1>
     </div>
    
    

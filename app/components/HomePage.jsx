@@ -87,11 +87,11 @@ export default function HomePage() {
           {messages.map((m) => (
             <div key={m.id} className=" py-8 bg-gray-100 rounded-lg  relative ">
               <>
-                <div className="flex gap-2 items-center  mb-10  relative     ">
+                <div className="flex gap-6 items-center  mb-10  relative     ">
                   
                   <span className="text-xl flex ">
                     {m.role === "user" && (
-                      <div className="absolute right-10  sm:right-0 flex items-center h-fit mb-4 ">
+                      <div className="absolute right-6 mb-8  sm:right-0 flex items-center h-fit  ">
                         <span
                           className="bg-[#CDE4D6]  rounded-l-lg rounded-tr-xl
                          text-[14px] font-semibold px-2 py-0.5"
@@ -160,11 +160,11 @@ export default function HomePage() {
 </button>
      
       </form>
-      <h2 className="text-md text-[#00afbf] font-semibold my-6">Few examples to ask</h2>
+      <h2 className="text-md text-[#00afbf] font-semibold my-24 mb-6">Few examples to ask</h2>
       <div className="FAQ w-[90%]   grid md:grid-cols-2 lg:grid-cols-3 gap-5">
         <div className="grid grid-cols-1 gap-2 w-full"> 
           {questionArray.map((question) => (
-          <button key={question}   className="bg-white cursor-pointer border-2 shadow-sm rounded-lg text-[#00afbf] py-2 " 
+          <button key={question}   className="bg-gray-50 cursor-pointer border-2 shadow-sm rounded-lg text-[#00afbf] py-2 " 
           onClick={()=>{
             setQuestionChosen(question)
            handleInputChange({target:{value:question}})
