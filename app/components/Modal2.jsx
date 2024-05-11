@@ -28,15 +28,13 @@ const colors = {
 };
 
  
-export default function Modal2({setLang}) {
+export default function Modal2({setModelOpened}) {
     const [currentValue, setCurrentValue] = useState(0);
     const [hoverValue, setHoverValue] = useState(undefined);
+
+    
     const stars = Array(5).fill(0)
-    useEffect(() => {
-        setTimeout(() => {
-         openModal()
-          }, 15000);// Code to execute goes here
-      },[]);
+  
   let subtitle;
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
@@ -71,12 +69,13 @@ export default function Modal2({setLang}) {
     setHoverValue(undefined)
   }
 
-  const languges =[
-    "English","Français","اردو","Deutsch","العربية","Española", "Türkçe","dell'Italia"
-   
-  ]
+ 
   
-  return ( <div style={styles.container} className="">
+  
+  return ( 
+  
+  
+  <div style={styles.container} >
   <h2 className="text-teal-500 text-md font-semibold my-6"> Give us stars ,We Appreciate your feedback </h2>
   <div style={styles.stars}>
     {stars.map((_, index) => {
@@ -104,7 +103,7 @@ export default function Modal2({setLang}) {
 
   <button
    className="bg-teal-600 px-2 py-2 my-3 text-white rounded-lg font-bold"
-  >
+  onClick={() => setModelOpened(false)}>
     Submit
   </button>
   

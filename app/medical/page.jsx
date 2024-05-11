@@ -10,9 +10,11 @@ import axios from 'axios'
 
 import Modal2 from '../components/Modal2'
 export default function MedicalLocation() {
-
+  const [modelOpened,setModelOpened]=useState(false)
   const [lat, setLat] = useState(0)
   const [lng, setLng] = useState(0)
+
+  
 
  useEffect(()=>{
 
@@ -21,7 +23,11 @@ export default function MedicalLocation() {
     console.log(response.data)
   })
  },[])
-
+ useEffect(() => {
+  setTimeout(() => {
+   setModelOpened(true)
+    }, 15000);// Code to execute goes here
+},[]);
 //  useEffect(()=>{
 
 //     navigator.geolocation.getCurrentPosition(function(position) {
@@ -43,8 +49,9 @@ export default function MedicalLocation() {
   {/* <Maps2 /> */}
   {/* <Map4 /> */}
 
-  {/* <div><Modal2/></div> */}
-  <Map3 />
+  <div className={`${modelOpened?"block":"hidden"}`} ><Modal2 setModelOpened={setModelOpened}/></div>
+ 
+ <div className={`${modelOpened?"opacity-20":""}`}><Map3 /></div> 
   {/* <Map6 /> */}
   {/* <Map5/> */}
 
