@@ -101,7 +101,7 @@ export default function HomePage() {
                   </span>
                 </div>
                 <div>
-                  <div className="flex items-center  justify-start mt-16   w-fit sm:mt-8  pl-4 ">
+                  <div className={`flex items-center  justify-center   w-fit sm:mt-8  pl-4 ${status === "in_progress" ? "animate-pulse mt-16" : "-mt-12"}`} >
                     <div className="flex items-center w-fit relative  mt-2">
                       {status === "in_progress" ? (
                         <Image
@@ -125,8 +125,8 @@ export default function HomePage() {
                   </div>
                   {m.role === "assistant" && (
                     <p
-                      style={{ direction: "rtl" }}
-                      className="whitespace-pre-wrap ml-8 w-4/5 bg-white self-center  p-10"
+                      
+                      className="whitespace-pre-wrap   self-center bg-white ml-2 py-2  w-[95%]  px-4"
                     >
                       {m.content}
                     </p>
