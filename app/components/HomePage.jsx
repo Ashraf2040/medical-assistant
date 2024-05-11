@@ -17,10 +17,12 @@ export default function HomePage() {
     const [showAccordion, setShowAccordion] = useState(false);
 
   const askedQuestions1 = [
-    "How to improve soil condition? "
-    ,"What are  methods for pest control on cabbage?",
-    "What is the best time to plant okra in north india?",
-    "How to improve soil condition?"
+    "What are the initial signs of heat exhaustion or stroke, and how to prevent them?",
+    
+    ,"What are effective ways to treat symptoms of a cough, flu, or fever?",
+    "I am pregnant and have noticed some bleeding. What steps should I take immediately?",
+    "How can I best manage my diabetes during Hajj?"
+    
   ];
   const askedQuestions2 = [
     "ماهي مناسك الحج1؟",
@@ -73,9 +75,9 @@ export default function HomePage() {
         </Link>
         <Link href="/healthcare" className="">
           <button className="bg-[#085f63] flex gap-2 justify-between px-2 rounded-lg  text-[14px] text-white
-           py-2 font-semibold ">
+           py-2 font-semibold items-center ">
          Health & Enviro Tips
-         <span><Image src="./card-icon.png" width={20} height={20} alt="health-image"  className=""/></span>
+         <span><Image src="./flashcardicon.png" width={22} height={23} alt="health-image"  className=" "/></span>
           </button>
         </Link>
       </div>
@@ -85,7 +87,8 @@ export default function HomePage() {
           {messages.map((m) => (
             <div key={m.id} className=" py-8 bg-gray-100 rounded-lg  relative ">
               <>
-                <div className="flex gap-2 items-center  mb-10      ">
+                <div className="flex gap-2 items-center  mb-10  relative     ">
+                  
                   <span className="text-xl flex ">
                     {m.role === "user" && (
                       <div className="absolute right-10  sm:right-0 flex items-center h-fit mb-4 ">

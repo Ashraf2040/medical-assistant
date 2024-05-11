@@ -15,14 +15,15 @@ export async function GET(request){
     '&radius='+radius+
     "&key=" + GOOGLE_API_KEY)
     const res=await fetch(
-        BASE_URL + "/textsearch/json?query=hospital"+"&location="+lat+","+lng+'&radius='+radius+"&key=" + GOOGLE_API_KEY,
+        BASE_URL + "/textsearch/json?query=hospitals"+"&location="+lat+","+lng+'&radius='+radius+"&key=" + GOOGLE_API_KEY,
     {
       headers: {
         "Content-Type": "application/json",
       },
     }
     );
-    const product = await res.json();
+    const hospitals = await res.json();
 
-    return NextResponse.json({ product });
+    return NextResponse.json({ hospitals});
+   
 }

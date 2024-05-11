@@ -28,9 +28,9 @@ export default function Home() {
     setLoading(true)
 
       GlobalApi.getGooglePlace(category,radius,userLocation.lat,userLocation.lng).then(resp=>{
-        console.log(resp.data.product.results);
-        setBusinessList(resp.data.product.results);
-        setBusinessListOrg(resp.data.product.results);
+        console.log(resp.data.hospitals.results);
+        setBusinessList(resp.data.hospitals.results);
+        setBusinessListOrg(resp.data.hospitals.results);
    setLoading(false)
     })
    }

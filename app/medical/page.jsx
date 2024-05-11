@@ -4,9 +4,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import Map3 from '../components/Map3'
-
+import RatingDialog from '../components/RatingDialog'
 import GlobalApies from '../services/GlobalApies'
 import axios from 'axios'
+
+import Modal2 from '../components/Modal2'
 export default function MedicalLocation() {
 
   const [lat, setLat] = useState(0)
@@ -31,6 +33,8 @@ export default function MedicalLocation() {
     
 //   getNearByPlace()
 //  },[])
+
+
   return (
     <div className=' py-2 w-full h-screen   '>
   
@@ -38,9 +42,13 @@ export default function MedicalLocation() {
   {/* asdsad */}
   {/* <Maps2 /> */}
   {/* <Map4 /> */}
+
+  <div><Modal2/></div>
   <Map3 />
   {/* <Map6 /> */}
   {/* <Map5/> */}
+
+  
     </div>
   )
 }

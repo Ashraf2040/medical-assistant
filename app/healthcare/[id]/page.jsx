@@ -95,7 +95,7 @@ const titlecard = currentCards[currentIndex].title
    
      
        <SwiperSlide key={index} className=' '  >
-         <Image src={image}  alt="diaf" width={800} height={600}  className="object-fit h-full "    priority   />
+         <Image src={image}  alt="diaf" width={800} height={600}  className="object-fit h-full transition-opacity opacity-0 duration-[2s"    priority  onLoadingComplete={(image) => image.classList.remove('opacity-0')}  />
          
        </SwiperSlide>
       
