@@ -68,13 +68,13 @@ export default function HomePage() {
         <Link href="/medical" className="">
           <button className=" bg-[#085f63] flex gap-2 justify-between  px-2 rounded-lg  text-[14px]   text-white font-semibold py-2">
           Medical Facilities 
-          <span><span><Image src="./location-icon.png" width={15} height={10} alt="medical image" className="h-5" /></span></span>
+          <span><span><Image src="/loc.svg" width={15} height={10} alt="medical image" className="h-5" /></span></span>
           </button>
         </Link>
         <Link href="/healthcare" className="">
           <button className="bg-[#085f63] flex gap-2 justify-between px-2 rounded-lg  text-[14px] text-white
            py-2 font-semibold ">
-         Health and Safety Tips
+         Health & Enviro Tips
          <span><Image src="./card-icon.png" width={20} height={20} alt="health-image"  className=""/></span>
           </button>
         </Link>
