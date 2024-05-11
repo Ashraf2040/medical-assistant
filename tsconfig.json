@@ -38,7 +38,7 @@
     "app/components/SwipeCarousol.jsx",
     "app/tour/page.jsx",
     "app/page.jsx",
-    "app/layout.jsx",
+    "app/[locale]/layout.jsx",
     ".next/types/app/healthcare/info/[id]/page.jsx",
     ".next/types/app/healthcare/info/page.jsx"
   ],

@@ -37,7 +37,7 @@ export default function HealthCare() {
         grabCursor={true}
         modules={[EffectCards]}
         onClick={() => {setCurrentSwiper(index)}}
-        className="mySwiper relative rounded-[18px] shadow-[0_0_10px_#dddd] w-full " 
+        className="mySwiper relative rounded-[18px] shadow-[0_0_10px_#ddd] w-full " 
       >
         
         {item.sources.map((value, index) => (
@@ -50,13 +50,13 @@ export default function HealthCare() {
       alt={value.title}
       width={800}
       height={600}
-      className=" h-full rounded-[18px]"
-      style={{ width: '100%', height: 'auto' }}
+      className=" h-full rounded-[18px] w-full"
+      
       priority
       key={1}
     />
             <span className='text-[#02B1BF] bg-white rounded-b-lg absolute top-0 right-0 px-4 text-[18px] py-1'>{index+1} of {item.sources.length}</span>
-            <p className="  text-center w-full py-4 text-[18px]  absolute bottom-0 bg-white text-black font-semibold ">{value.title}</p>
+            <p className="  text-center w-full py-4 text-[18px]  absolute bottom-0  text-[#02B1BF]  font-bold  bg-white  ">{value.title}</p>
             </Link>
             
           </SwiperSlide>) )}

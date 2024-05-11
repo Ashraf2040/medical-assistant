@@ -54,7 +54,7 @@ const titlecard = currentCards[currentIndex].title
  
   
   return (
-    <div className='flex flex-col bg-gray-100 h-screen      items-center w-full  border-b-2 border-white  pt-3'> 
+    <div className='flex flex-col bg-gray-100 h-screen items-center w-full  border-b-2 border-white  pt-2'> 
     <div className='flex  items-center gap-4  justify-center  '>
     <Link href="/healthcare" className='text-[#02B1BF]'>
      
@@ -64,7 +64,7 @@ const titlecard = currentCards[currentIndex].title
 
 
       </Link>
-    <h1 className='text-2xl   text-[#02B1BF] text w-fit  font-bold   rounded-lg '>{currentTitleTrimed}</h1>
+    <h1 className='text-xl   text-[#02B1BF]  w-fit  font-bold   rounded-lg '>{currentTitleTrimed}</h1>
     </div>
    
    
@@ -95,7 +95,7 @@ const titlecard = currentCards[currentIndex].title
    
      
        <SwiperSlide key={index} className=' '  >
-         <Image src={image}  alt="diaf"   className="object-cover h-full "    priority fill  />
+         <Image src={image}  alt="diaf" width={800} height={600}  className="object-fit h-full "    priority   />
          
        </SwiperSlide>
       

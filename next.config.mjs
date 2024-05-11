@@ -1,3 +1,6 @@
+
+
+ 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     reactStrictMode:false,
@@ -6,7 +9,6 @@ const nextConfig = {
         unoptimized: true,
         domains:['lh3.googleusercontent.com','maps.googleapis.com']
     }
-}
-
-
-export default nextConfig;
+};
+ 
+export default (nextConfig);

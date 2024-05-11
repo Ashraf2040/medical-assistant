@@ -13,14 +13,17 @@
       { 
         src :"/2.jpg",
         title: "Health Tips for using FaceMasks",
+        cards:["/health-tips/1card.jpg","/health-tips/2card.jpg","/health-tips/3card.jpg","/health-tips/4card.jpg","/health-tips/5card.jpg","/health-tips/6card.jpg","/health-tips/8card.jpg","/health-tips/9card.jpg","/health-tips/10card.jpg","/health-tips/11card.jpg","/health-tips/12card.jpg","/health-tips/13card.jpg","/health-tips/14card.jpg","/health-tips/15card.jpg","/health-tips/16card.jpg","/health-tips/17card.jpg"]
        },
       { 
         src :"/3.jpg",
         title: "Physical Fitness Preparation for Hajj",
+        cards:["/health-tips/1card.jpg","/health-tips/2card.jpg","/health-tips/3card.jpg","/health-tips/4card.jpg","/health-tips/5card.jpg","/health-tips/6card.jpg","/health-tips/8card.jpg","/health-tips/9card.jpg","/health-tips/10card.jpg","/health-tips/11card.jpg","/health-tips/12card.jpg","/health-tips/13card.jpg","/health-tips/14card.jpg","/health-tips/15card.jpg","/health-tips/16card.jpg","/health-tips/17card.jpg"]
        },
       { 
         src :"/4.jpg",
         title: "Managing Heat and Hydration during Hajj",
+        cards:["/health-tips/1card.jpg","/health-tips/2card.jpg","/health-tips/3card.jpg","/health-tips/4card.jpg","/health-tips/5card.jpg","/health-tips/6card.jpg","/health-tips/8card.jpg","/health-tips/9card.jpg","/health-tips/10card.jpg","/health-tips/11card.jpg","/health-tips/12card.jpg","/health-tips/13card.jpg","/health-tips/14card.jpg","/health-tips/15card.jpg","/health-tips/16card.jpg","/health-tips/17card.jpg"]
        },
      
     ]},
