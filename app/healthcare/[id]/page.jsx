@@ -4,7 +4,7 @@
 import React, { useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+ import { dataCards } from '../page';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/effect-creative';
@@ -19,21 +19,39 @@ import Image from 'next/image';
 
 export default function TopicInfo({params}) {
 
+  
+
+  const currentTitle=params.id.replace(/-/g, ' ')
+
+  const currentSwiperIndex=(+currentTitle.charAt(currentTitle.length-1))
+console.log(currentSwiperIndex)
+  console.log(currentTitle)
+  const currentTitleTrimed = currentTitle.substring(0, currentTitle.length - 1);
+console.log(currentTitleTrimed)
+
  const [currentIndex, setCurrentIndex] = useState(0);
-  const dataCards = [
-    { 
-      src :"/1.jpg",
-      title: " Hazards in the Workplace",
-     },
-    { 
-      src :"/2.jpg",
-      title: "Hygiene in the Workplace",
-     },
-    { 
-      src :"/3.jpg",
-      title: "Cybersecurity Fundamentals",
-     },
-  ]
+
+const currentCards=dataCards[currentSwiperIndex].sources
+.filter((value)=>value.title===currentTitleTrimed)[0].cards
+console.log(currentCards)
+
+const titlecard = currentCards[currentIndex].title
+  // const dataCards = [
+  //   { 
+  //     src :"/1.jpg",
+  //     title: " Hazards in the Workplace",
+  //    },
+  //   { 
+  //     src :"/2.jpg",
+  //     title: "Hygiene in the Workplace",
+  //    },
+  //   { 
+  //     src :"/3.jpg",
+  //     title: "Cybersecurity Fundamentals",
+  //    },
+  // ]
+  
+ 
   
   return (
     <div className='flex flex-col bg-gray-100 h-screen      items-center w-full  border-b-2 border-white  pt-3'> 
@@ -46,7 +64,7 @@ export default function TopicInfo({params}) {
 
 
       </Link>
-    <h1 className='text-2xl   text-[#02B1BF] text w-fit  font-bold   rounded-lg '>{dataCards[params.id].title}</h1>
+    <h1 className='text-2xl   text-[#02B1BF] text w-fit  font-bold   rounded-lg '>{currentTitleTrimed}</h1>
     </div>
    
    
@@ -72,7 +90,7 @@ export default function TopicInfo({params}) {
      
      
 
-     {images.map((image, index) => 
+     {currentCards.map((image, index) => 
 
    
      
@@ -87,88 +105,12 @@ export default function TopicInfo({params}) {
         
       </Swiper>
 
-      <p className='font-semibold   border-gray-400  rounded-[15px] text-[#02B1BF] p-4 py-2 mt-2'> {`${currentIndex+1} of ${images.length} `}</p>
+      <p className='font-semibold   border-gray-400  rounded-[15px] text-[#02B1BF] p-4 py-2 mt-2'> {`${currentIndex+1} of ${currentCards.length} `}</p>
       
      
     </div>
   );
 }
-
-
-
-
-
-
-
-
-
-const images = ["/sy.jpg","/2.jpg","/3.jpg","/a.jpg","/b.jpg" ,"/c.jpg","/d.jpg","/e.jpg","/f.jpg" ,"/38.png","/39.png"];
-
-
-
-
-
-
-
-
-
-
-
-
-{/* <SwiperSlide>
-          
-          <Image src="/a.jpg" alt="diaf"   className="w-full" fill  />
-          
-          </SwiperSlide>
-        <SwiperSlide>
-          
-          <Image src="/b.jpg" alt="diaf"   className="w-full" fill  />
-          
-          </SwiperSlide> */}
-        {/* <SwiperSlide>
-          
-          <Image src="/c.jpg" alt="diaf"   className="w-full" fill  />
-          
-          </SwiperSlide>
-        <SwiperSlide>
-          
-          <Image src="/d.jpg" alt="diaf"   className="w-full" fill />
-          
-          </SwiperSlide>
-        <SwiperSlide>
-          
-          <Image src="/44.png" alt="diaf"   className="w-full" fill  />
-          
-          </SwiperSlide>
-        <SwiperSlide>
-          
-          <Image src="/38.png" alt="diaf"   className="w-full" fill  />
-          
-          </SwiperSlide>
-        <SwiperSlide>
-          
-          <Image src="/39.png" alt="diaf"   className="w-full" fill  />
-          
-          </SwiperSlide>
-        <SwiperSlide>
-          
-          <Image src="/43.png" alt="diaf"   className="w-full" fill  />
-          
-          </SwiperSlide>
-        <SwiperSlide>
-          
-          <Image src="/44.png" alt="diaf"   className="w-full" fill  />
-          
-          </SwiperSlide> */}
-      
-
-
-
-
-
-
-
-
 
 
 

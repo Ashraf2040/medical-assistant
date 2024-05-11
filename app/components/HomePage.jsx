@@ -63,17 +63,19 @@ export default function HomePage() {
 
   return (
     <div className=" flex flex-col w-full h-screen    items-center  mt-2 overflow-scroll   ">
-      <div className="navigate flex items-center flex-wrap justify-center gap-4 my-10 px-2 w-full sm:text-sm  ">
+      <div className="navigate flex items-center flex-wrap justify-center gap-4 my-10  w-full sm:text-sm  ">
        
         <Link href="/medical" className="">
-          <button className=" bg-[#085f63]  px-2 rounded-lg    text-white font-semibold py-2">
-          Nearby Medicals 
+          <button className=" bg-[#085f63] flex gap-2 justify-between  px-2 rounded-lg  text-[14px]   text-white font-semibold py-2">
+          Medical Facilities 
+          <span><span><Image src="./location-icon.png" width={15} height={10} alt="medical image" className="h-5" /></span></span>
           </button>
         </Link>
-        <Link href="/healthcare">
-          <button className="bg-[#085f63] px-2 rounded-lg border-[  text-[16px] text-white
+        <Link href="/healthcare" className="">
+          <button className="bg-[#085f63] flex gap-2 justify-between px-2 rounded-lg  text-[14px] text-white
            py-2 font-semibold ">
-          Healthcare Education
+         Health and Safety Tips
+         <span><Image src="./card-icon.png" width={20} height={20} alt="health-image"  className=""/></span>
           </button>
         </Link>
       </div>
@@ -84,12 +86,12 @@ export default function HomePage() {
             <div key={m.id} className=" py-8 bg-gray-100 rounded-lg  relative ">
               <>
                 <div className="flex gap-2 items-center  mb-10      ">
-                  <span className="text-3xl flex ">
+                  <span className="text-xl flex ">
                     {m.role === "user" && (
                       <div className="absolute right-10  sm:right-0 flex items-center h-fit mb-4 ">
                         <span
                           className="bg-[#CDE4D6]  rounded-l-lg rounded-tr-xl
-                         text-[18px] font-semibold px-8 py-0.5"
+                         text-[14px] font-semibold px-2 py-0.5"
                         >
                           {m.content}
                         </span>
@@ -100,14 +102,14 @@ export default function HomePage() {
                 </div>
                 <div>
                   <div className="flex items-center  justify-start mt-16   w-fit sm:mt-8  pl-4 ">
-                    <div className="flex items-center w-fit relative ">
+                    <div className="flex items-center w-fit relative  mt-2">
                       {status === "in_progress" ? (
                         <Image
                           src="/Ai.png"
                           alt=""
                           width={40}
                           height={40}
-                          className="h-10 w-10"
+                          className="h-8 w-8 "
                         />
                       ) : (
                         ""
