@@ -91,7 +91,7 @@ export default function HomePage() {
                   
                   <span className="text-xl flex ">
                     {m.role === "user" && (
-                      <div className="absolute right-6 mb-8  sm:right-0 flex items-center h-fit  ">
+                      <div className=" mb-8  sm:right-0 flex items-center h-fit  ">
                         <span
                           className="bg-[#CDE4D6]  rounded-l-lg rounded-tr-xl
                          text-[14px] font-semibold px-2 py-0.5"
@@ -117,13 +117,13 @@ export default function HomePage() {
                       ) : (
                         ""
                       )}
-                      {status === "in_progress" ? (
+                      {/* {status === "in_progress" ? (
                         <span
                           className={`${styles.loader} absolute left-3 bottom-0`}
                         ></span>
                       ) : (
                         ""
-                      )}
+                      )} */}
                     </div>
                   </div>
                   {m.role === "assistant" && (

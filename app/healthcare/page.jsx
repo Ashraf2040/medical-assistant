@@ -22,7 +22,7 @@ export default function HealthCare() {
   console.log(currentSwiper)
   return (
    
-    <div className=' my-8 px-2 gap-4 flex flex-col w-full items-center justify-center   '>
+    <div className='  px-2 gap-4 flex  flex-col w-full items-center justify-center   '>
 
     
 
@@ -43,17 +43,16 @@ export default function HealthCare() {
         {item.sources.map((value, index) => (
 
          
-          <SwiperSlide key={index} className='flex justify-center items-center w-full  ring-[3px] ring-neutral-200 '>
-            <Link href={`/healthcare/${value.title.replace(/\s+/g,'-') +currentSwiper}`} className='w-full rounded-[18px]'>
+          <SwiperSlide key={index} className='flex justify-center items-center w-full  ring-[3px] ring-neutral-200  '>
+            <Link href={`/healthcare/${value.title.replace(/\s+/g,'-') +currentSwiper}`} className='w-full rounded-[18px] relative h-full'>
             <Image
       src={value.src}
       alt={value.title}
-      width={800}
-      height={800}
-      className=" h-full w-full"
+      // 
+      className=""
+      fill
       
-      priority
-      key={1}
+      
     />
             <span className='text-[#02B1BF] bg-white rounded-b-lg absolute top-0 right-0 px-4 text-[18px] py-1'>{index+1} of {item.sources.length}</span>
             <p className="  text-center w-full py-4 text-[18px]  absolute bottom-0  text-[#085f63]   font-bold  bg-white z-20 ">{value.title}</p>

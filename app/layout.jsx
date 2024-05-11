@@ -34,8 +34,8 @@ useEffect(()=>{
 const [userLocation,setUserLocation]=useState([]);
   const [selectedBusiness,setSelectedBusiness]=useState([]);
   return (
-    <html  lang="en" className="m-0 p-0 bg-white  relative">
-      <body className={`${inter.className} flex flex-col min-h-screen`}>
+    <html  lang="en" className="m-0 p-0 bg-white relative">
+      <body className={`${inter.className} flex flex-col   w-screen h-screen`}>
 
     <Provider>
           <SelectedBusinessContext.Provider value={{selectedBusiness,setSelectedBusiness}}>
@@ -45,7 +45,7 @@ const [userLocation,setUserLocation]=useState([]);
         <div className={`${pathName.includes("/healthcare/")?"hidden":"block"}`} >
           <Header />
         </div>
-        <div>{children}</div>
+        <div className="">{children}</div>
 
      <div>
       <Footer />

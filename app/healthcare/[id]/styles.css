@@ -1,4 +1,4 @@
-#app {
+/* #app {
     height: 100%;
   }
   html,
@@ -9,13 +9,7 @@
    
   body {
     /* background: #eee; */
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 14px;
-   
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }  
+    
   
  
   
@@ -40,7 +34,7 @@
     width: 95% !important;
     height: 75%;
     border-radius: 15px;
-    border: 2px solid white ;
+    border: 2px solid yellow ;
   }
   
   

@@ -54,8 +54,8 @@ const titlecard = currentCards[currentIndex].title
  
   
   return (
-    <div className='flex flex-col bg-gray-100 h-screen items-center w-full  border-b-2 border-white  pt-2'> 
-    <div className='flex px-3 items-center gap-4  justify-center relative w-full '>
+    <div className='flex flex-col  h-screen items-center w-full  border-b-2 border-white  pt-12'> 
+    <div className='flex px-3 items-center gap-4  justify-center relative w-full mb-6 '>
     <Link href="/healthcare" className='text-[#02B1BF] absolute left-3'>
      
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="w-6 h-6">
@@ -81,7 +81,7 @@ const titlecard = currentCards[currentIndex].title
           },
         }}
         modules={[EffectCreative]}
-        className="swiper min-h-[82%] min-w-[95%]"
+        className="swiper min-h-[70%] min-w-[95%]"
         onSlideChange={(e) => {
           const activeIndex = e.activeIndex;
           setCurrentIndex(activeIndex);

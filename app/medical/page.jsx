@@ -42,7 +42,7 @@ export default function MedicalLocation() {
 
 
   return (
-    <div className=' py-2 w-full h-screen   '>
+    <div className=' py-2 w-full max-h-screen   '>
   
   {/* <Map currentLat={lat} currentLng={lng}/> */}
   {/* asdsad */}

@@ -40,9 +40,9 @@ export default function Home() {
 
   
   return (
-        <div className=' '>
-          
-          <div className='mb-4'>
+        <div className='px-1 '>
+          <GoogleMapView  businessList={businessList}/>
+          <div className='mb-t'>
         {!loading?  <BusinessList businessList={businessList} />
           :
           <div className='flex gap-3'>
@@ -53,7 +53,7 @@ export default function Home() {
           }
           
           </div>
-          <GoogleMapView  businessList={businessList}/>
+          
       
 
     </div>

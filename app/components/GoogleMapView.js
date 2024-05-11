@@ -50,9 +50,9 @@ function GoogleMapView({businessList}) {
                   }
                 }}
               />
-              {businessList.map((item,index)=>index<=7&&(
+              {/* {businessList.map((item,index)=>index<=5&&(
                 <Markers business={item} key={index}/>
-              ))}
+              ))} */}
             </GoogleMap>
         </LoadScript>
     </div>
