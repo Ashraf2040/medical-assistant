@@ -95,7 +95,7 @@ const titlecard = currentCards[currentIndex].title
    
      
        <SwiperSlide key={index} className=' '  >
-         <Image src={image}  alt="diaf" width={800} height={600}  className="object-fit h-full transition-opacity opacity-0 duration-[2s"    priority  onLoadingComplete={(image) => image.classList.remove('opacity-0')}  />
+         <Image src={image}  alt="diaf" width={800} height={600}  className="object-fit h-full "    priority    />
          
        </SwiperSlide>
       
@@ -105,7 +105,7 @@ const titlecard = currentCards[currentIndex].title
         
       </Swiper>
 
-      <p className='font-semibold   border-gray-400  rounded-[15px] text-[#02B1BF] p-4 py-2 mt-2'> {`${currentIndex+1} of ${currentCards.length} `}</p>
+      <p className='font-semibold   border-gray-400  rounded-[15px] text-[#02B1BF] p-4 py-2 mt-6'> {`${currentIndex+1} of ${currentCards.length} `}</p>
       
      
     </div>
