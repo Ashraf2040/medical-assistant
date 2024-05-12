@@ -16,6 +16,7 @@ export default function HomePage() {
     });
     const [showAccordion, setShowAccordion] = useState(false);
     const [showresponse, setshowResponse] = useState(true);
+    const [questionClicked,setQuestionClicked]=useState(false)
 
   const askedQuestions1 = [
     "What are the initial signs of heat exhaustion or stroke, and how to prevent them?",
@@ -147,33 +148,34 @@ export default function HomePage() {
         onSubmit={submitMessage}
         className=" items-center justify-center relative    w-[88%]  flex ">
       
-        <input
+        <textarea
           ref={inputRef}
           disabled={status !== "awaiting_message"}
-          className="  p-4 ring-1 ring-gray-200  outline-none focus:ring-[#00afbf]   bg-white  rounded-[10px]  w-full "
+          className="  pt-4 pl-2 h-fit pr-11 ring-1 ring-gray-200  outline-none focus:ring-[#00afbf]   bg-white  rounded-[10px]  w-full "
           value={input 
           }
           placeholder="Type your question..."
           onChange={handleInputChange}
           
         />
-        <button className="absolute z-20 right-1" >
+        <button className="absolute z-20 right-1" clicked >
        <Image src={'/Send _icon.svg'} alt="search" width={30} height={30} className="h-10 w-10"/>
 
 </button>
      
       </form>
-      <h2 className="text-md text-[#00afbf] font-semibold my-24 mb-6">Few examples to ask</h2>
+      <h2 className="text-md text-[#00afbf] font-semibold my-10 mb-6">Few examples to ask</h2>
       <div className="FAQ w-[90%]   grid md:grid-cols-2 lg:grid-cols-3 gap-5">
         <div className="grid grid-cols-1 gap-2 w-full"> 
-          {questionArray.map((question) => (
-          <button key={question}   className="bg-gray-50 cursor-pointer border-2 shadow-sm rounded-lg text-[#00afbf] py-2 " 
+          {questionArray.map((question,index) => (
+          <button key={index}   className="bg-gray-50 cursor-pointer border-2 shadow-sm rounded-lg text-[#00afbf] py-2 " 
           onClick={()=>{
             setQuestionChosen(question)
            handleInputChange({target:{value:question}})
            submitMessage()
           }}
           >
+            
             {question}
          <form action="" onSubmit={submitMessage} className="hidden">
          <input
