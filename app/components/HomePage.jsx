@@ -47,7 +47,7 @@ export default function HomePage() {
     if (status === "awaiting_message") {
       inputRef.current?.focus();
     }
-   
+   console.log(status)
   }, [status]);
 
 
@@ -63,8 +63,7 @@ export default function HomePage() {
     setMerged(!merged);
   };
 
-
-
+ 
   return (
     <div className=" flex flex-col w-full h-screen    items-center  mt-2 overflow-scroll   ">
       <div className="navigate flex items-center flex-wrap justify-center gap-4 my-10  w-full sm:text-sm  ">
@@ -84,7 +83,7 @@ export default function HomePage() {
         </Link>
       </div>
 
-      <div className={`  w-[90%]   flex flex-col  ${!showresponse ? "hidden" : ""}`}>
+      <div className={`  w-[90%]   flex flex-col  ${!showresponse && "hidden"}`}>
         <div className=" ">
           {messages.map((m) => (
             <div key={m.id} className=" py-8 bg-gray-100 rounded-lg  relative ">
@@ -135,7 +134,13 @@ export default function HomePage() {
                       className="whitespace-pre-wrap relative  self-center bg-white ml-2 py-4  w-[95%]  px-4 rounded-md"
                     >
                       {m.content}
-                      <button onClick={() => setshowResponse(false)} className="absolute flex items-center justify-center top-1 right-1 bg-gray-100 rounded-full w-6 h-6">X</button>
+                      <button onClick={() =>{
+       
+                        setshowResponse(false)
+                            }
+                            
+                            
+                             }className="absolute flex items-center justify-center top-1 right-1 bg-gray-100 rounded-full w-6 h-6">X</button>
                     </p>
                   )}
                 </div>
@@ -156,6 +161,7 @@ export default function HomePage() {
           }
           placeholder="Type your question..."
           onChange={handleInputChange}
+          
           
         />
         <button className="absolute z-20 right-1" clicked >

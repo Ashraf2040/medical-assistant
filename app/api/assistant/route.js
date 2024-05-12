@@ -1,7 +1,7 @@
 import { experimental_AssistantResponse } from "ai";
 import OpenAI from "openai";
 
-import { MessageContentText } from "openai/resources/beta/threads/messages/messages";
+// import { MessageContentText } from "openai/resources/beta/threads/messages/messages";
 import {OpenAIStream,StreamingTextResponse} from "ai"
 
 // Create an OpenAI API client (that's edge friendly!)
