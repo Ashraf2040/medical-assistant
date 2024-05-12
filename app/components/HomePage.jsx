@@ -15,6 +15,7 @@ export default function HomePage() {
       api: "/api/assistant",
     });
     const [showAccordion, setShowAccordion] = useState(false);
+    const [showresponse, setshowResponse] = useState(true);
 
   const askedQuestions1 = [
     "What are the initial signs of heat exhaustion or stroke, and how to prevent them?",
@@ -82,29 +83,30 @@ export default function HomePage() {
         </Link>
       </div>
 
-      <div className="  w-[90%]   flex flex-col  ">
+      <div className={`  w-[90%]   flex flex-col  ${!showresponse ? "hidden" : ""}`}>
         <div className=" ">
           {messages.map((m) => (
             <div key={m.id} className=" py-8 bg-gray-100 rounded-lg  relative ">
               <>
-                <div className="flex gap-6 items-center  mb-10  relative     ">
+                <div className="flex gap-6 items-center  mb-6  relative     ">
                   
-                  <span className="text-xl flex ">
+                  <span className="text-xl flex justify-center ">
                     {m.role === "user" && (
-                      <div className=" mb-8  sm:right-0 flex items-center h-fit  ">
+                      <div className="   sm:right-0 flex items-center h-fit w-[90%]  ">
+                     
                         <span
-                          className="bg-[#CDE4D6]  rounded-l-lg rounded-tr-xl
+                          className="bg-[#085f63] text-white  rounded-lg 
                          text-[14px] font-semibold px-2 py-0.5"
                         >
                           {m.content}
                         </span>
-                        🤵
+                        
                       </div>
                     )}
                   </span>
                 </div>
                 <div>
-                  <div className={`flex items-center  justify-center   w-fit sm:mt-8  pl-4 ${status === "in_progress" ? "animate-pulse mt-16" : "-mt-12"}`} >
+                  <div className={`flex items-center  justify-center   w-fit sm:mt-8  pl-4 ${status === "in_progress" ? "animate-pulse " : "-mt-12"}`} >
                     <div className="flex items-center w-fit relative  mt-2">
                       {status === "in_progress" ? (
                         <Image
@@ -129,9 +131,10 @@ export default function HomePage() {
                   {m.role === "assistant" && (
                     <p
                       
-                      className="whitespace-pre-wrap   self-center bg-white ml-2 py-2  w-[95%]  px-4"
+                      className="whitespace-pre-wrap relative  self-center bg-white ml-2 py-4  w-[95%]  px-4 rounded-md"
                     >
                       {m.content}
+                      <button onClick={() => setshowResponse(false)} className="absolute flex items-center justify-center top-1 right-1 bg-gray-100 rounded-full w-6 h-6">X</button>
                     </p>
                   )}
                 </div>
@@ -154,8 +157,8 @@ export default function HomePage() {
           onChange={handleInputChange}
           
         />
-        <button className="absolute right-1" >
-       <Image src={'/Send _icon.svg'} alt="search" width={30} height={30} className="h-9 w-9"/>
+        <button className="absolute z-20 right-1" >
+       <Image src={'/Send _icon.svg'} alt="search" width={30} height={30} className="h-10 w-10"/>
 
 </button>
      
