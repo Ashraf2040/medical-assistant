@@ -43,14 +43,12 @@ export default function HealthCare() {
         {item.sources.map((value, index) => (
 
          
-          <SwiperSlide key={index} className='flex justify-center items-center w-full  ring-[3px] ring-neutral-200  '>
+          <SwiperSlide key={index} className='flex justify-center items-center w-full  ring-[3px] ring-neutral-200 min-h-[440px] '>
             <Link href={`/healthcare/${value.title.replace(/\s+/g,'-') +currentSwiper}`} className='w-full rounded-[18px] relative h-full'>
-            <Image
+            <img
       src={value.src}
       alt={value.title}
-      // 
-      className=""
-      fill
+      className="min-h-[440px] w-full object-cover rounded-[18px]"
       
       
     />

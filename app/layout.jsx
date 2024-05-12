@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 // import "./globalicon.css";
 import Header from "./components/Header";
-import Footers from "./components/Footer";
+
 import Footer from "./components/Footer";
 import { usePathname } from "next/navigation";
 import { UserLocationContext } from './context/UserLocationContext'
