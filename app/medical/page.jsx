@@ -8,6 +8,7 @@ import Modal2 from '../components/Modal2'; // Assuming Modal handles rating dial
 import GlobalApies from '../services/GlobalApies';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
+import OpenAIAssistant from '../components/openai-assistant';
 
 export default function MedicalLocation() {
   const [modelOpened, setModelOpened] = useState(false);
@@ -42,6 +43,8 @@ export default function MedicalLocation() {
       </div>
 
       <div className={`${modelOpened ? "opacity-20" : ""}`}><Map3 /></div>
+
+     
 
     </div>
   );

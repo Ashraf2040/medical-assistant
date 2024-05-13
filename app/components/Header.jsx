@@ -28,7 +28,7 @@ export default function Header() {
         /></Link>
         {/* <Image src="/diaf.png" alt="diaf" width={180} height={180} /> */}
       </div>
-      <h1 className=" leading-5 my-1   font-semibold">
+      <h1 className=" leading-5 my-1 text-[#085f63]   font-semibold">
       {appTitle[currentLanguage]}
       </h1>
       <div>
