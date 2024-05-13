@@ -4,8 +4,15 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import Modals from "./Modals";
+import { useSelector } from "react-redux";
 export default function Header() {
   const [lang, setLang] = useState("English");
+  const currentLanguage = useSelector((state) => state.language.currentLanguage);
+
+  const appTitle ={
+    en:"AI Health Assistant for  Guests of Allah",
+    ar:"المساعد الطبي لضيوف الرحمن"
+  }
   return (
     <div className=" shadow-sm flex gap-2 relative flex-col  pb-4  items-center bg-gray-50">
       <div className="flex items-center justify-center w-full ">
@@ -22,7 +29,7 @@ export default function Header() {
         {/* <Image src="/diaf.png" alt="diaf" width={180} height={180} /> */}
       </div>
       <h1 className=" leading-5 my-1   font-semibold">
-        AI Health Assistant for  Guests of Allah{" "}
+      {appTitle[currentLanguage]}
       </h1>
       <div>
 

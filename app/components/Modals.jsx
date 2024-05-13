@@ -1,6 +1,7 @@
 import React from 'react'
 import Modal from 'react-modal';
-
+import { useDispatch } from 'react-redux';
+import { setLanguage } from './../../lib/languageSlice'; // Import your setLanguage action
 
 
 const customStyles = {
@@ -20,7 +21,11 @@ const customStyles = {
   },
 
 };
-export default function Modals({setLang}) {
+export default function Modals({setLang}) 
+
+
+
+{
   let subtitle;
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
@@ -42,9 +47,46 @@ export default function Modals({setLang}) {
   }
 
   const languges =[
-    "English","Français","اردو","Deutsch","العربية","Española", "Türkçe","dell'Italia"
+
+    {
+    
+          name:"English",
+          code:"en"
+    
+    },
+    {
+     
+        name:"Français",
+        code:"fr"
+      },
+      {
+        name:"اردو",
+        code:"ud"
+      } ,{
+        name:"Deutsch",
+        code:"de"
+      } ,{
+        name:"العربية",
+        code:"ar"
+      } ,{
+        name:"Española",
+        code:"es"
+      },{
+        name:"Türkçe",
+        code:"tu"
+      },
+      {
+        name:"dell'Italia",
+        code:"it"
+      }
+    
+    // "English","Français","اردو","Deutsch","العربية","Española", "Türkçe","dell'Italia"
    
   ]
+  const handleLanguageChange = (newLanguage) => {
+    dispatch(setLanguage(newLanguage)); // Dispatch action to update language
+  };
+  const dispatch = useDispatch();
   return (
     <div className=''>
     <button onClick={openModal}>
@@ -70,11 +112,12 @@ export default function Modals({setLang}) {
      
       
       <div className='grid grid-cols-4  flex-wrap w-full justify-center '>
-      {languges.map((l) => (
-        <div key={l} className=" flex justify-center ">
-          <button className="bg-[#dbeefd] m-[2px]  text-[#02B1BF] font-normal my-2 p-1 px-2 rounded-md  " onClick={() =>{ setLang(l)
+      {languges.map((language,index) => (
+        <div key={index} className=" flex justify-center ">
+          <button className="bg-[#dbeefd] m-[2px]  text-[#02B1BF] font-normal my-2 p-1 px-2 rounded-md  " onClick={() =>{ setLang(language.name)
+handleLanguageChange(language.code)
           setIsOpen(false)}
-          }>{l}</button>
+          }>{language.name}</button>
         </div>
       ))}
     </div>
