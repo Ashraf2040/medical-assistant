@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 
 export default function OpenAIAssistant({
     assistantId = "asst_t7GuIOqWsYXxVBlIpXH5D29e",
-   
+ 
 }) {
   
    
@@ -117,11 +117,14 @@ export default function OpenAIAssistant({
             console.error(error);
         });
     }
+  
 
     // handles changes to the prompt input field
     function handlePromptChange(e) {
-        setPrompt(e.target.value);
+
+       setPrompt(e.target.value);
     }
+
 
     return (
         <div className="flex flex-col items-center    relative w-full">
@@ -139,7 +142,7 @@ export default function OpenAIAssistant({
             }
             <form onSubmit={handleSubmit} className="items-center justify-center relative    w-[88%]  flex">
                 <input 
-                    disabled={isLoading}
+                  
                     autoFocus
                     className="py-4 pl-2 h-fit pr-11 ring-1 ring-gray-200  outline-none focus:ring-[#00afbf]   bg-white  rounded-[10px]  w-full" 
                     onChange={handlePromptChange}
@@ -147,7 +150,7 @@ export default function OpenAIAssistant({
                     placeholder="Type your Question" />
                 {isLoading ? 
                     <button 
-                        disabled
+                       
                         className="ml-2  bg-blue-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">   
                         <OpenAISpinner /> 
                     </button>
@@ -160,6 +163,7 @@ export default function OpenAIAssistant({
                 }
             </form>
         </div>
+        
     )
 }
 

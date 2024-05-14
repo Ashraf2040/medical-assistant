@@ -9,12 +9,22 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY || "",
 });
 
-// IMPORTANT! Set the runtime to edge
+const languageDetection = require('langdetect');
+
+
+
 export const runtime = "edge";
 
 export async function POST(req) {
   // Parse the request body
   const input= await req.json();
+  const language = languageDetection.detect(input.message);
+
+  // Include language information in message content
+  const messageWithLanguage = {
+    ...input,
+    language: language
+  };
 
   // Create a thread if needed
   const threadId = input.threadId ?? (await openai.beta.threads.create({})).id;
