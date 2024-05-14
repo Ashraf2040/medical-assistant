@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 
 export default function OpenAIAssistant({
     assistantId = "asst_t7GuIOqWsYXxVBlIpXH5D29e",
- 
+ ques
 }) {
   
    
@@ -181,10 +181,12 @@ export function OpenAIAssistantMessage({message}) {
     return (
         <div className=" w-full px-4 py-6 bg-gray-100 rounded-lg ">
            
-            <div className={`mx-4 ${message.role == "user" ? "font-bold" : ""} ${currentLanguage==="ar" ? "text-right" : "text-left"}   overflow-auto openai-text`}>
-                <Markdown>
+            <div className={`mx-4 ${message.role == "user" ? "font-bold bg-[#085f63] text-white w-fit px-2 py-2  rounded-md" : "font-bold text-[#085f63] leading-7 text-justify"} ${currentLanguage==="ar" ? "text-right" : "text-left"}   overflow-auto openai-text relative`}>
+                <Markdown className=''>
                     {message.content}
                 </Markdown>
+
+               
             </div>
         </div>
     )
