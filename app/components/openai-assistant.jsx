@@ -9,10 +9,10 @@ import { useSelector } from 'react-redux';
 
 export default function OpenAIAssistant({
     assistantId = "asst_t7GuIOqWsYXxVBlIpXH5D29e",
- ques
+    questionChosen
 }) {
   
-   
+   console.log(questionChosen)
     const [isLoading, setIsLoading] = useState(false);
     const [threadId, setThreadId] = useState(null);
     const [prompt, setPrompt] = useState("");
@@ -55,7 +55,7 @@ export default function OpenAIAssistant({
                 {
                     id: messageId.current.toString(),
                     role: "user",
-                    content: prompt,
+                    content: prompt ||questionChosen,
                     createdAt: new Date(),
                 } 
             ]
@@ -68,7 +68,7 @@ export default function OpenAIAssistant({
             body: JSON.stringify({
                 assistantId: assistantId,
                 threadId: threadId,
-                content: prompt,
+                content: prompt ||questionChosen,
             }),
         });
 
@@ -81,7 +81,7 @@ export default function OpenAIAssistant({
         runner.on('messageCreated', (message) => {
             setThreadId(message.thread_id);
         });
-
+    console.log(response)
         runner.on('textDelta', (_delta, contentSnapshot) => {
             const newStreamingMessage = {
                 ...streamingMessage,
@@ -121,7 +121,9 @@ export default function OpenAIAssistant({
 
     // handles changes to the prompt input field
     function handlePromptChange(e) {
-
+        if(questionChosen){
+            setPrompt(questionChosen);
+        }else
        setPrompt(e.target.value);
     }
 
@@ -146,7 +148,7 @@ export default function OpenAIAssistant({
                     autoFocus
                     className="py-4 pl-2 h-fit pr-11 ring-1 ring-gray-200  outline-none focus:ring-[#00afbf]   bg-white  rounded-[10px]  w-full" 
                     onChange={handlePromptChange}
-                    value={prompt}
+                    value={!questionChosen ? prompt : questionChosen}
                     placeholder="Type your Question" />
                 {isLoading ? 
                     <button 
@@ -156,7 +158,7 @@ export default function OpenAIAssistant({
                     </button>
                     : 
                     <button 
-                        disabled={prompt.length == 0}
+                        // disabled={prompt.length == 0}
                         className="absolute z-20 right-1">   
                        <Image src={'/Send _icon.svg'} alt="search" width={30} height={30} className="h-10 w-10"/>
                     </button>
