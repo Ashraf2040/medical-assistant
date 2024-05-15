@@ -86,47 +86,47 @@ export default function HomePage() {
       rights :"جميع الحقوق محفوظة"
    
   }}
-  const getQuestions = async () => {
-    await fetch("api/questions")
-      .then((res) => res.json())
-      .then((data) => setPredefinedQuestions(data));
-  };
+  // const getQuestions = async () => {
+  //   await fetch("api/questions")
+  //     .then((res) => res.json())
+  //     .then((data) => setPredefinedQuestions(data));
+  // };
 
-  useEffect(() => {
-    getQuestions();
-  }, []);
+  // useEffect(() => {
+  //   getQuestions();
+  // }, []);
 
-  const questionsToAsk = [];
-  predefinedQuestions.forEach((element) => {
-    questionsToAsk.push(element.question);
-  });
+  // const questionsToAsk = [];
+  // predefinedQuestions.forEach((element) => {
+  //   questionsToAsk.push(element.question);
+  // });
 
-  function filterSuggestions(input, allQuestions) {
-    if (!allQuestions) {
-      return [];
-    }
-    const regex = new RegExp(input, "gi");
-    return allQuestions.filter((question) => regex.test(question));
-  }
+  // function filterSuggestions(input, allQuestions) {
+  //   if (!allQuestions) {
+  //     return [];
+  //   }
+  //   const regex = new RegExp(input, "gi");
+  //   return allQuestions.filter((question) => regex.test(question));
+  // }
 
-  useEffect(() => {
-    const filtered = filterSuggestions(userInput, questionsToAsk);
+  // useEffect(() => {
+  //   const filtered = filterSuggestions(userInput, questionsToAsk);
 
-    setSuggestions(filtered);
-  }, [userInput]);
+  //   setSuggestions(filtered);
+  // }, [userInput]);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
 
-    const questionAnswer = await predefinedQuestions.find(
-      (question) => question.question === userInput
-    );
-    setAnswer(questionAnswer.answer);
-    setAnswerBox(true);
-    setSuggestions([]);
+  //   const questionAnswer = await predefinedQuestions.find(
+  //     (question) => question.question === userInput
+  //   );
+  //   setAnswer(questionAnswer.answer);
+  //   setAnswerBox(true);
+  //   setSuggestions([]);
 
     
-  };
+  // };
   
 
   const hanleCloseClick = () => {
@@ -141,12 +141,12 @@ export default function HomePage() {
 
  
 
-  const arrived = predefinedQuestions.length > 0;
-  if (arrived) {
-    console.log(predefinedQuestions);
-  } else {
-    console.log("not arrived");
-  }
+  // const arrived = predefinedQuestions.length > 0;
+  // if (arrived) {
+  //   console.log(predefinedQuestions);
+  // } else {
+  //   console.log("not arrived");
+  // }
 
   const currentLanguage = useSelector((state) => state.language.currentLanguage);
 
@@ -237,22 +237,3 @@ export default function HomePage() {
   
   
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
